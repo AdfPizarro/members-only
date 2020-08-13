@@ -4,14 +4,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    if user_signed_in?
-      @posts
-    else 
-     @posts.each do |post |
+    if !user_signed_in?
+      @posts.each do |post|
        post.user.username = 'Aonnymous'
      end
-     @posts
     end
+    @posts
   end
 
   def show; end
@@ -61,7 +59,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
  
- def post_params
-    params.require(:post).permit(:title, :content)
+  def post_params
+   params.require(:post).permit(:title, :content)
   end
 end
