@@ -17,6 +17,10 @@ Get a local copy of the file  clone with HTTPS
 ```
 https://github.com/AdfPizarro/members-only.git  
 ```
+Install all the dependencies
+```
+bundle install
+```
 
 Migrate the database with the following command
 ```
